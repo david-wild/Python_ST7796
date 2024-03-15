@@ -30,22 +30,22 @@ import Adafruit_GPIO.SPI as SPI
 
 
 # SPI_CLOCK_HZ = 64000000 # 64 MHz
-SPI_CLOCK_HZ = 4000000 # 4 MHz
+SPI_CLOCK_HZ = 4000000  # 4 MHz
 
 
 # Constants for interacting with display registers.
-ST7735_TFTWIDTH    = 128
-ST7735_TFTHEIGHT   = 160
+ST7796_TFTWIDTH = 320  # 128
+ST7796_TFTHEIGHT = 480  # 160
 
-ST7735_NOP         = 0x00
-ST7735_SWRESET     = 0x01
-ST7735_RDDID       = 0x04
-ST7735_RDDST       = 0x09
+ST7796_NOP         = 0x00
+ST7796_SWRESET     = 0x01
+ST7796_RDDID       = 0x04
+ST7796_RDDST       = 0x09
 
-ST7735_SLPIN       = 0x10
-ST7735_SLPOUT      = 0x11
-ST7735_PTLON       = 0x12
-ST7735_NORON       = 0x13
+ST7796_SLPIN       = 0x10
+ST7796_SLPOUT      = 0x11
+ST7796_PTLON       = 0x12
+ST7796_NORON       = 0x13
 
 # ILI9341_RDMODE      = 0x0A
 # ILI9341_RDMADCTL    = 0x0B
@@ -53,57 +53,57 @@ ST7735_NORON       = 0x13
 # ILI9341_RDIMGFMT    = 0x0A
 # ILI9341_RDSELFDIAG  = 0x0F
 
-ST7735_INVOFF      = 0x20
-ST7735_INVON       = 0x21
+ST7796_INVOFF      = 0x20
+ST7796_INVON       = 0x21
 # ILI9341_GAMMASET    = 0x26
-ST7735_DISPOFF     = 0x28
-ST7735_DISPON      = 0x29
+ST7796_DISPOFF     = 0x28
+ST7796_DISPON      = 0x29
 
-ST7735_CASET       = 0x2A
-ST7735_RASET       = 0x2B
-ST7735_RAMWR       = 0x2C
-ST7735_RAMRD       = 0x2E
+ST7796_CASET       = 0x2A
+ST7796_RASET       = 0x2B
+ST7796_RAMWR       = 0x2C
+ST7796_RAMRD       = 0x2E
 
-ST7735_PTLAR       = 0x30
-ST7735_MADCTL      = 0x36
-# ST7735_PIXFMT      = 0x3A
-ST7735_COLMOD       = 0x3A
+ST7796_PTLAR       = 0x30
+ST7796_MADCTL      = 0x36
+# ST7796_PIXFMT      = 0x3A
+ST7796_COLMOD       = 0x3A
 
-ST7735_FRMCTR1     = 0xB1
-ST7735_FRMCTR2     = 0xB2
-ST7735_FRMCTR3     = 0xB3
-ST7735_INVCTR      = 0xB4
+ST7796_FRMCTR1     = 0xB1
+ST7796_FRMCTR2     = 0xB2
+ST7796_FRMCTR3     = 0xB3
+ST7796_INVCTR      = 0xB4
 # ILI9341_DFUNCTR     = 0xB6
-ST7735_DISSET5      = 0xB6
+ST7796_DISSET5      = 0xB6
 
 
-ST7735_PWCTR1      = 0xC0
-ST7735_PWCTR2      = 0xC1
-ST7735_PWCTR3      = 0xC2
-ST7735_PWCTR4      = 0xC3
-ST7735_PWCTR5      = 0xC4
-ST7735_VMCTR1      = 0xC5
+ST7796_PWCTR1      = 0xC0
+ST7796_PWCTR2      = 0xC1
+ST7796_PWCTR3      = 0xC2
+ST7796_PWCTR4      = 0xC3
+ST7796_PWCTR5      = 0xC4
+ST7796_VMCTR1      = 0xC5
 # ILI9341_VMCTR2      = 0xC7
 
-ST7735_RDID1       = 0xDA
-ST7735_RDID2       = 0xDB
-ST7735_RDID3       = 0xDC
-ST7735_RDID4       = 0xDD
+ST7796_RDID1       = 0xDA
+ST7796_RDID2       = 0xDB
+ST7796_RDID3       = 0xDC
+ST7796_RDID4       = 0xDD
 
-ST7735_GMCTRP1     = 0xE0
-ST7735_GMCTRN1     = 0xE1
+ST7796_GMCTRP1     = 0xE0
+ST7796_GMCTRN1     = 0xE1
 
-ST7735_PWCTR6      = 0xFC
+ST7796_PWCTR6      = 0xFC
 
 # Colours for convenience
-ST7735_BLACK       = 0x0000 # 0b 00000 000000 00000
-ST7735_BLUE        = 0x001F # 0b 00000 000000 11111
-ST7735_GREEN       = 0x07E0 # 0b 00000 111111 00000
-ST7735_RED         = 0xF800 # 0b 11111 000000 00000
-ST7735_CYAN        = 0x07FF # 0b 00000 111111 11111
-ST7735_MAGENTA     = 0xF81F # 0b 11111 000000 11111
-ST7735_YELLOW      = 0xFFE0 # 0b 11111 111111 00000
-ST7735_WHITE       = 0xFFFF # 0b 11111 111111 11111
+ST7796_BLACK       = 0x0000 # 0b 00000 000000 00000
+ST7796_BLUE        = 0x001F # 0b 00000 000000 11111
+ST7796_GREEN       = 0x07E0 # 0b 00000 111111 00000
+ST7796_RED         = 0xF800 # 0b 11111 000000 00000
+ST7796_CYAN        = 0x07FF # 0b 00000 111111 11111
+ST7796_MAGENTA     = 0xF81F # 0b 11111 000000 11111
+ST7796_YELLOW      = 0xFFE0 # 0b 11111 111111 00000
+ST7796_WHITE       = 0xFFFF # 0b 11111 111111 11111
 
 
 def color565(r, g, b):
@@ -125,11 +125,11 @@ def get_platform_gpio_for_pi(**keywords):
     import RPi.GPIO
     return GPIO.RPiGPIOAdapter(RPi.GPIO, **keywords)
 
-class ST7735(object):
-    """Representation of an ST7735 TFT LCD."""
+class ST7796(object):
+    """Representation of an ST7796 TFT LCD."""
 
-    def __init__(self, dc, spi, rst=None, gpio=None, width=ST7735_TFTWIDTH,
-        height=ST7735_TFTHEIGHT):
+    def __init__(self, dc, spi, rst=None, gpio=None, width=ST7796_TFTWIDTH,
+        height=ST7796_TFTHEIGHT):
         """Create an instance of the display using SPI communication.  Must
         provide the GPIO pin number for the D/C pin and the SPI driver.  Can
         optionally provide the GPIO pin number for the reset pin as the rst
@@ -194,23 +194,23 @@ class ST7735(object):
         # Initialize the display.  Broken out as a separate function so it can
         # be overridden by other displays in the future.
         
-        self.command(ST7735_SWRESET) # Software reset
+        self.command(ST7796_SWRESET) # Software reset
         time.sleep(0.150) # delay 150 ms
         
-        self.command(ST7735_SLPOUT) # Out of sleep mode
+        self.command(ST7796_SLPOUT) # Out of sleep mode
         time.sleep(0.500) # delay 500 ms
         
-        self.command(ST7735_FRMCTR1) # Frame rate ctrl - normal mode
+        self.command(ST7796_FRMCTR1) # Frame rate ctrl - normal mode
         self.data(0x01) # Rate = fosc/(1x2+40) * (LINE+2C+2D)
         self.data(0x2C)
         self.data(0x2D)
         
-        self.command(ST7735_FRMCTR2) # Frame rate ctrl - idle mode
+        self.command(ST7796_FRMCTR2) # Frame rate ctrl - idle mode
         self.data(0x01) # Rate = fosc/(1x2+40) * (LINE+2C+2D)
         self.data(0x2C)
         self.data(0x2D)
         
-        self.command(ST7735_FRMCTR3) # Frame rate ctrl - partial mode
+        self.command(ST7796_FRMCTR3) # Frame rate ctrl - partial mode
         self.data(0x01) # Dot inversion mode
         self.data(0x2C)
         self.data(0x2D)
@@ -218,46 +218,46 @@ class ST7735(object):
         self.data(0x2C)
         self.data(0x2D)
         
-        self.command(ST7735_INVCTR) # Display inversion ctrl
+        self.command(ST7796_INVCTR) # Display inversion ctrl
         self.data(0x07) # No inversion
         
-        self.command(ST7735_PWCTR1) # Power control
+        self.command(ST7796_PWCTR1) # Power control
         self.data(0xA2)
         self.data(0x02) # -4.6V
         self.data(0x84) # auto mode
         
-        self.command(ST7735_PWCTR2) # Power control
+        self.command(ST7796_PWCTR2) # Power control
         self.data(0x0A) # Opamp current small
         self.data(0x00) # Boost frequency
         
-        self.command(ST7735_PWCTR4) # Power control
+        self.command(ST7796_PWCTR4) # Power control
         self.data(0x8A) # BCLK/2, Opamp current small & Medium low
         self.data(0x2A)
         
-        self.command(ST7735_PWCTR5) # Power control
+        self.command(ST7796_PWCTR5) # Power control
         self.data(0x8A)
         self.data(0xEE)
         
-        self.command(ST7735_VMCTR1) # Power control
+        self.command(ST7796_VMCTR1) # Power control
         self.data(0x0E)
         
-        self.command(ST7735_INVOFF) # Don't invert display
+        self.command(ST7796_INVOFF) # Don't invert display
         
-        self.command(ST7735_MADCTL) # Memory access control (directions)
+        self.command(ST7796_MADCTL) # Memory access control (directions)
         self.data(0xC8) # row addr/col addr, bottom to top refresh
         
-        self.command(ST7735_COLMOD) # set color mode
+        self.command(ST7796_COLMOD) # set color mode
         self.data(0x05) # 16-bit color
         
         #
         
-        self.command(ST7735_CASET) # Column addr set
+        self.command(ST7796_CASET) # Column addr set
         self.data(0x00) # XSTART = 0
         self.data(0x00)
         self.data(0x00) # XEND = 127
         self.data(0x7F)
         
-        self.command(ST7735_RASET) # Row addr set
+        self.command(ST7796_RASET) # Row addr set
         self.data(0x00) # XSTART = 0
         self.data(0x00)
         self.data(0x00) # XEND = 159
@@ -265,7 +265,7 @@ class ST7735(object):
         
         #
         
-        self.command(ST7735_GMCTRP1) # Set Gamma
+        self.command(ST7796_GMCTRP1) # Set Gamma
         self.data(0x02)
         self.data(0x1c)
         self.data(0x07)
@@ -283,7 +283,7 @@ class ST7735(object):
         self.data(0x03)
         self.data(0x10)
         
-        self.command(ST7735_GMCTRN1) # Set Gamma
+        self.command(ST7796_GMCTRN1) # Set Gamma
         self.data(0x03)
         self.data(0x1d)
         self.data(0x07)
@@ -301,10 +301,10 @@ class ST7735(object):
         self.data(0x02)
         self.data(0x10)
         
-        self.command(ST7735_NORON) # Normal display on
+        self.command(ST7796_NORON) # Normal display on
         time.sleep(0.10) # 10 ms
         
-        self.command(ST7735_DISPON) # Display on
+        self.command(ST7796_DISPON) # Display on
         time.sleep(0.100) # 100 ms
 
     def begin(self):
@@ -325,17 +325,17 @@ class ST7735(object):
             x1 = self.width-1
         if y1 is None:
             y1 = self.height-1
-        self.command(ST7735_CASET)        # Column addr set
+        self.command(ST7796_CASET)        # Column addr set
         self.data(x0 >> 8)
         self.data(x0)                    # XSTART
         self.data(x1 >> 8)
         self.data(x1)                    # XEND
-        self.command(ST7735_RASET)        # Row addr set
+        self.command(ST7796_RASET)        # Row addr set
         self.data(y0 >> 8)
         self.data(y0)                    # YSTART
         self.data(y1 >> 8)
         self.data(y1)                    # YEND
-        self.command(ST7735_RAMWR)        # write to RAM
+        self.command(ST7796_RAMWR)        # write to RAM
 
     def display(self, image=None):
         """Write the display buffer or provided image to the hardware.  If no

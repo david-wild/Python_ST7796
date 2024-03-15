@@ -1,9 +1,9 @@
-Python ST7735
+Python ST7796
 =======================
 
-Python library to control an ST7735 TFT LCD display.  Allows simple drawing on the display without installing a kernel module.
+Python library to control an ST7796 TFT LCD display.  Allows simple drawing on the display without installing a kernel module.
 
-Designed specifically to work with a ST7735 based 128x160 pixel TFT SPI display.
+Designed specifically to work with a ST7796 based 128x160 pixel TFT SPI display.
 
 For all platforms (Raspberry Pi and Beaglebone Black) make sure you have the following dependencies:
 
@@ -19,11 +19,6 @@ sudo pip install RPi.GPIO
 sudo pip install Adafruit_GPIO
 ````
 
-For a BeagleBone Black make sure you have the Adafruit_BBIO library by executing:
-
-````
-sudo pip install Adafruit_BBIO
-````
 
 Install the library by downloading with the download link on the right, unzipping the archive, navigating inside the library's directory and executing:
 

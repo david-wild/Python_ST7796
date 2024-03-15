@@ -22,7 +22,7 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
-import ST7735 as TFT
+import ST7796 as TFT
 import Adafruit_GPIO as GPIO
 import Adafruit_GPIO.SPI as SPI
 
@@ -45,7 +45,7 @@ SPI_DEVICE = 0
 # SPI_DEVICE = 0
 
 # Create TFT LCD display class.
-disp = TFT.ST7735(
+disp = TFT.ST7796(
     DC,
     rst=RST,
     spi=SPI.SpiDev(

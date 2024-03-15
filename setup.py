@@ -25,12 +25,12 @@ classifiers = ['Development Status :: 4 - Beta',
                'Topic :: Software Development',
                'Topic :: System :: Hardware']
 
-setup(name              = 'ST7735',
+setup(name              = 'ST7796',
       version           = '0.0.1',
-      description       = 'Library to control an ST7735 TFT LCD display.',
+      description       = 'Library to control an ST7796 TFT LCD display.',
       license           = 'MIT',
       classifiers       = classifiers,
-      url               = 'https://github.com/cskau/Python_ST7735/',
+      url               = 'https://github.com/cskau/Python_ST7796/',
       dependency_links  = ['https://github.com/adafruit/Adafruit_Python_GPIO/tarball/master#egg=Adafruit-GPIO-0.6.5'],
       install_requires  = ['Adafruit-GPIO>=0.6.5'],
       packages          = find_packages())
